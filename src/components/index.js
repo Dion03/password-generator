@@ -40,9 +40,8 @@ function Index() {
           alignItems="center"
           minHeight="100vh"
         >
-              <Card className="Card" align="center">
-                <CardMedia>
-                        
+          <Card className="Card" align="center">
+            <CardMedia>                  
               <Fade in={alert}
                 className="centerAlert"
                 timeout={{ enter: 1000, exit: 1000 }}
@@ -54,40 +53,38 @@ function Index() {
                   Wachtwoord gekopieerd!
                 </Alert>
               </Fade>
-                </CardMedia>
-                <Typography variant='h4' className="Title">Wachtwoord generator</Typography>
-                <Tooltip title="Klik om te kopieren">
-                  <Box sx={{mt:3}}
-                    display="flex"
-                    justifyContent="center"
-                    className="passwordOutput"
-                    onClick={() => clipboard()}
-                  >
-                    <Typography >{wachtwoord}</Typography>
-                  </Box>
-                </Tooltip>
-                <Grid container sx={{mt:3}}>
-                  <Grid xs={12} md={6}>
-                    <Item>
-                        <FormGroup>
-                          <FormControlLabel control={<Checkbox defaultChecked onClick={e=> {setOptions({...options, hoofdletters: e.target.checked})}}/>} label="Hoofdletters" />
-                          <FormControlLabel control={<Checkbox defaultChecked onClick={e=> {setOptions({...options, nummers: e.target.checked})}}/>} label="Nummers" />
-                          <FormControlLabel control={<Checkbox defaultChecked onClick={e=> {setOptions({...options, specKarakters: e.target.checked})}}/>} label="Speciale tekens " />
-                        </FormGroup>
-                      </Item>
-                  </Grid>                        
-                  <Grid xs={12} md={6}>
-                    <Item>
-                        <TextField  type="number" value={options.lengte} 
-                          onChange={e => setOptions({ ...options, lengte: +e.target.value })}  
-                          label="Lengte wachtwoord"/>  
-                        <Button variant="contained" sx={{mt:3}} onClick={() => setWachtwoord(generatePassword(options))}>Maak wachtwoord aan</Button>
-                      </Item>
-                  </Grid>
+            </CardMedia>
+            <Typography variant='h4' className="Title">Wachtwoord generator</Typography>
+            <Tooltip title="Klik om te kopieren">
+              <Box sx={{mt:3}}
+                display="flex"
+                justifyContent="center"
+                className="passwordOutput"
+                onClick={() => clipboard()}
+              >
+                <Typography >{wachtwoord}</Typography>
+              </Box>
+              </Tooltip>
+              <Grid container sx={{mt:3}}>
+                <Grid xs={12} md={6}>
+                  <Item>
+                    <FormGroup>
+                      <FormControlLabel control={<Checkbox defaultChecked onClick={e=> {setOptions({...options, hoofdletters: e.target.checked})}}/>} label="Hoofdletters" />
+                      <FormControlLabel control={<Checkbox defaultChecked onClick={e=> {setOptions({...options, nummers: e.target.checked})}}/>} label="Nummers" />
+                      <FormControlLabel control={<Checkbox defaultChecked onClick={e=> {setOptions({...options, specKarakters: e.target.checked})}}/>} label="Speciale tekens " />
+                    </FormGroup>
+                  </Item>
+                </Grid>                        
+                <Grid xs={12} md={6}>
+                  <Item>
+                    <TextField  type="number" value={options.lengte} 
+                      onChange={e => setOptions({ ...options, lengte: +e.target.value })}  
+                      label="Lengte wachtwoord"/>  
+                    <Button variant="contained" sx={{mt:3}} onClick={() => setWachtwoord(generatePassword(options))}>Maak wachtwoord aan</Button>
+                  </Item>
                 </Grid>
-                     
-              </Card>
-
+              </Grid>     
+            </Card>
         </Box>
       </div>
     );

@@ -3,7 +3,6 @@ const uppercaseLetters = lowercaseLetters.toUpperCase();
 const numbers = "0123456789";
 const specialCharacters = "!?.@#$%&*()_+-=";
 
-
 function getKleineLetters(){
   return lowercaseLetters[Math.floor(Math.random() * lowercaseLetters.length)]
 }
