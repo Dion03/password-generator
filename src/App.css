@@ -1,9 +1,12 @@
+html{
+  background-color: rgba(196, 194, 194, 0.652);
+}
 .Card{
   padding: 5rem;
   width: 30rem;
   border-radius: 1rem !important;
 }
-.output{
+.passwordOutput{
   padding: 1rem;
   background: #786859;
   border-radius: 1.5rem;
@@ -12,8 +15,4 @@
 }
 .centerAlert{
   justify-content: center !important;
-}
-html{
-  background-color: rgba(196, 194, 194, 0.652);
-
 }
